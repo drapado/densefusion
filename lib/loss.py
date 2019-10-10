@@ -11,7 +11,7 @@ from lib.knn.__init__ import KNearestNeighbor
 
 
 def loss_calculation(pred_r, pred_t, pred_c, target, model_points, idx, points, w, refine, num_point_mesh, sym_list):
-    knn = KNN(1)
+    knn = KNearestNeighbor(1)
     bs, num_p, _ = pred_c.size()
 
     pred_r = pred_r / (torch.norm(pred_r, dim=2).view(bs, num_p, 1))

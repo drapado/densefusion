@@ -11,7 +11,7 @@ from lib.knn.__init__ import KNearestNeighbor
 
 
 def loss_calculation(pred_r, pred_t, target, model_points, idx, points, num_point_mesh, sym_list):
-    knn = KNN(1)
+    knn = KNearestNeighbor(1)
     pred_r = pred_r.view(1, 1, -1)
     pred_t = pred_t.view(1, 1, -1)
     bs, num_p, _ = pred_r.size()
