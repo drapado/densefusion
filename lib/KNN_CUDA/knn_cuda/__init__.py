@@ -11,7 +11,7 @@ def load_cpp_ext(ext_name):
     root_dir = os.path.join(os.path.split(__file__)[0])
     ext_csrc = os.path.join(root_dir, "csrc")
     ext_path = os.path.join(ext_csrc, "_ext", ext_name)
-    os.makedirs(ext_path)
+    #os.makedirs(ext_path)
     assert torch.cuda.is_available(), "torch.cuda.is_available() is False."
     ext_sources = [
         os.path.join(ext_csrc, "cuda", "{}.cpp".format(ext_name)),
