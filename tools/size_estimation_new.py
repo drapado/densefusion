@@ -415,7 +415,6 @@ def main():
         			my_mat[3,3] = 1
 					print("4x4 Matrix = " + str(my_mat))
 					
-
                     frame = posenet_deploy.get_3d_bbox(frame, model_points, my_r_matrix, my_t)
                     frame = posenet_deploy.draw_axes(frame, my_r_matrix, my_t)
 
