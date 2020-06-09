@@ -356,15 +356,10 @@ def main():
 
                     #rotation = Rot.from_matrix(my_r_matrix)
                     #angle = rotation.as_euler('xyz', degrees=True)
-					my_mat = np.zeros((4,4))
-					my_mat[0:3, 0:3] = my_r_matrix
-        			my_mat[0:3, 3] = my_t
-        			my_mat[3,3] = 1
 		
                     my_t = np.around(my_t, 5)
                     #print("translation vector = " + str(my_t))
                     #print("rotation angles = " + str(my_r))
-					print("4x4 Matrix = " + str(my_mat))
                 
                     frame = posenet_deploy.get_3d_bbox(frame, model_points, my_r_matrix, my_t)
                     frame = posenet_deploy.draw_axes(frame, my_r_matrix, my_t)
@@ -407,12 +402,6 @@ def main():
                     
                     my_t_per_frame.append(my_t)
                     my_r_per_frame.append(my_r_matrix)
-					
-					my_mat = np.zeros((4,4))
-					my_mat[0:3, 0:3] = my_r_matrix
-        			my_mat[0:3, 3] = my_t
-        			my_mat[3,3] = 1
-					print("4x4 Matrix = " + str(my_mat))
 					
                     frame = posenet_deploy.get_3d_bbox(frame, model_points, my_r_matrix, my_t)
                     frame = posenet_deploy.draw_axes(frame, my_r_matrix, my_t)
